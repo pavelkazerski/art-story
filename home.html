@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220203153823">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220204180558">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -17,6 +17,10 @@
 			<div class="header__top top-header">
 				<div class="top-header__container">
 					<div class="top-header__body">
+						<div class="top-header__search search-top-header" data-spollers="479.98,max" data-spollers-speed="400">
+							<button class="search-top-header__button _icon-search" data-spoller></button>
+							<div class="search-top-header__body"></div>
+						</div>
 						<a href="tel:+375293432366" class="top-header__phone _icon-phone">
 							<span>Phone:</span>
 							<span>+375 (29) 343-23-66</span>
@@ -45,7 +49,7 @@
 								</ul>
 							</nav>
 						</div>
-						<a href="#" class="top-header__user _icon-user"><span>My Account</span></a>
+						<a href="#" class="top-header__user _icon-user" data-da=".top-header__body, 768, 1"><span>My Account</span></a>
 						<button type="button" class="menu__icon icon-menu">
 							<span></span>
 						</button>
@@ -54,8 +58,8 @@
 			</div>
 			<div class="header__body body-header">
 				<div class="body-header__container">
-					<a href="" class="body-header__logo">Art story</a>
-					<div class="body-header__search">
+					<a href="" class="body-header__logo" data-da=".top-header__body,479.98,6">Art story</a>
+					<div class="body-header__search" data-da=".search-top-header__body, 479.98,6">
 						<form action="#" class="search-header">
 							<button class="search-header__button _icon-search"></button>
 							<input autocomplete="off" type="text" name="form[]" data-error="error" placeholder="Search our store" class="search-header__input">
@@ -65,11 +69,11 @@
 						<a href="#" class="actions-header__catalog" data-da=".menu__list, 768">
 							<span>Сatalog</span>
 						</a>
-						<a href="#" class="actions-header__wishlist _icon-favorite">
+						<a href="#" class="actions-header__wishlist _icon-favorite" data-da=".top-header__body, 768, 1">
 							<span>Wishlist</span>
 							<span>2</span>
 						</a>
-						<a href="#" class="actions-header__cart _icon-cart">
+						<a href="#" class="actions-header__cart _icon-cart" data-da=".top-header__body, 768, 1">
 							<span>Cart</span>
 							<span>4</span>
 						</a>
@@ -78,7 +82,7 @@
 			</div>
 			<div class="header__catalog catalog-header">
 				<div class="catalog-header__container">
-					<nav class="catalog-header__menu menu-catalog">
+					<nav class="catalog-header__menu menu-catalog" data-simplebar>
 						<ul class="menu-catalog__list">
 							<li class="menu-catalog__item">
 								<a href="#" class="menu-catalog__link">Books, souvenirs</a>
@@ -128,7 +132,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220203153823"></script>
+	<script src="js/app.min.js?_v=20220204180558"></script>
 </body>
 
 </html>
