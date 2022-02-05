@@ -1492,7 +1492,7 @@ body {
 }
 @media (max-width: 47.99875em) {
   .newsletter__body {
-    padding: 0;
+    padding: 0px 0.375rem;
   }
   .newsletter__subtitle {
     line-height: 1.5;
