@@ -1593,14 +1593,14 @@ body {
   position: absolute;
   bottom: 12.375rem;
   left: 50%;
-  z-index: 7;
+  z-index: 3;
   transform: translate(-50%, 0px);
 }
 .slider-main__bullets {
   position: absolute;
   bottom: 2.125rem;
   left: 50%;
-  z-index: 7;
+  z-index: 3;
   transform: translate(-50%, 0px);
 }
 @media (max-width: 1176px) {
@@ -1632,6 +1632,104 @@ body {
 .decor-main-slider__item {
   position: absolute;
 }
+.decor-main-slider__item:nth-child(1) {
+  bottom: 2rem;
+  left: 0;
+  z-index: 3;
+}
+@media (min-width: 73.5em) {
+  .decor-main-slider__item:nth-child(1) {
+    width: 24.20625rem;
+  }
+}
+@media (min-width: 47.993125em) and (max-width: 73.5em) {
+  @supports (width: clamp( 18.1546875rem , 6.7682124611rem  +  23.7252211414vw , 24.20625rem )) {
+    .decor-main-slider__item:nth-child(1) {
+      width: clamp( 18.1546875rem , 6.7682124611rem  +  23.7252211414vw , 24.20625rem );
+    }
+  }
+  @supports not (width: clamp( 18.1546875rem , 6.7682124611rem  +  23.7252211414vw , 24.20625rem )) {
+    .decor-main-slider__item:nth-child(1) {
+      width: calc(18.1546875rem + 6.0515625 * (100vw - 47.993125rem) / 25.506875);
+    }
+  }
+}
+@media (max-width: 47.993125em) {
+  .decor-main-slider__item:nth-child(1) {
+    width: 18.1546875rem;
+  }
+}
+@media (min-width: 73.5em) {
+  .decor-main-slider__item:nth-child(1) {
+    height: 17.4375rem;
+  }
+}
+@media (min-width: 47.993125em) and (max-width: 73.5em) {
+  @supports (height: clamp( 13.078125rem , 4.8756294259rem  +  17.0909803729vw , 17.4375rem )) {
+    .decor-main-slider__item:nth-child(1) {
+      height: clamp( 13.078125rem , 4.8756294259rem  +  17.0909803729vw , 17.4375rem );
+    }
+  }
+  @supports not (height: clamp( 13.078125rem , 4.8756294259rem  +  17.0909803729vw , 17.4375rem )) {
+    .decor-main-slider__item:nth-child(1) {
+      height: calc(13.078125rem + 4.359375 * (100vw - 47.993125rem) / 25.506875);
+    }
+  }
+}
+@media (max-width: 47.993125em) {
+  .decor-main-slider__item:nth-child(1) {
+    height: 13.078125rem;
+  }
+}
+.decor-main-slider__item:nth-child(2) {
+  bottom: 2rem;
+  right: 2.5625rem;
+  z-index: 3;
+}
+@media (min-width: 73.5em) {
+  .decor-main-slider__item:nth-child(2) {
+    width: 17.90625rem;
+  }
+}
+@media (min-width: 47.993125em) and (max-width: 73.5em) {
+  @supports (width: clamp( 13.4296875rem , 5.006694733rem  +  17.5504153292vw , 17.90625rem )) {
+    .decor-main-slider__item:nth-child(2) {
+      width: clamp( 13.4296875rem , 5.006694733rem  +  17.5504153292vw , 17.90625rem );
+    }
+  }
+  @supports not (width: clamp( 13.4296875rem , 5.006694733rem  +  17.5504153292vw , 17.90625rem )) {
+    .decor-main-slider__item:nth-child(2) {
+      width: calc(13.4296875rem + 4.4765625 * (100vw - 47.993125rem) / 25.506875);
+    }
+  }
+}
+@media (max-width: 47.993125em) {
+  .decor-main-slider__item:nth-child(2) {
+    width: 13.4296875rem;
+  }
+}
+@media (min-width: 73.5em) {
+  .decor-main-slider__item:nth-child(2) {
+    height: 24.4375rem;
+  }
+}
+@media (min-width: 47.993125em) and (max-width: 73.5em) {
+  @supports (height: clamp( 18.328125rem , 6.832871346rem  +  23.9518757198vw , 24.4375rem )) {
+    .decor-main-slider__item:nth-child(2) {
+      height: clamp( 18.328125rem , 6.832871346rem  +  23.9518757198vw , 24.4375rem );
+    }
+  }
+  @supports not (height: clamp( 18.328125rem , 6.832871346rem  +  23.9518757198vw , 24.4375rem )) {
+    .decor-main-slider__item:nth-child(2) {
+      height: calc(18.328125rem + 6.109375 * (100vw - 47.993125rem) / 25.506875);
+    }
+  }
+}
+@media (max-width: 47.993125em) {
+  .decor-main-slider__item:nth-child(2) {
+    height: 18.328125rem;
+  }
+}
 .decor-main-slider__item:nth-child(3) {
   width: 55.375rem;
   height: 16.3125rem;
@@ -1645,9 +1743,23 @@ body {
   }
 }
 @media (max-width: 61.99875em) {
+  .decor-main-slider__item:nth-child(1) {
+    transform: translate(-10%, 0px);
+  }
+  .decor-main-slider__item:nth-child(2) {
+    transform: translate(10%, 0px);
+  }
   .decor-main-slider__item:nth-child(3) {
     width: 100%;
     height: 18.2625rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .decor-main-slider__item:nth-child(1) {
+    display: none;
+  }
+  .decor-main-slider__item:nth-child(2) {
+    display: none;
   }
 }
 @media (max-width: 29.99875em) {
