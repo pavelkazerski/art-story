@@ -1,7 +1,0 @@
-@charset "UTF-8";
-.lg-fullscreen:after {
-  content: "";
-}
-.lg-fullscreen-on .lg-fullscreen:after {
-  content: "";
-}
