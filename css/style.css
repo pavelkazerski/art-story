@@ -270,35 +270,14 @@ h2 a {
 }
 
 h3 a {
+  font-size: 1.5rem;
   line-height: 1.2;
-}
-@media (min-width: 73.5em) {
-  h3 a {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 29.99875em) and (max-width: 73.5em) {
-  @supports (font-size: clamp( 1.125rem , 0.8663975173rem  +  0.8620441941vw , 1.5rem )) {
-    h3 a {
-      font-size: clamp( 1.125rem , 0.8663975173rem  +  0.8620441941vw , 1.5rem );
-    }
-  }
-  @supports not (font-size: clamp( 1.125rem , 0.8663975173rem  +  0.8620441941vw , 1.5rem )) {
-    h3 a {
-      font-size: calc(1.125rem + 0.375 * (100vw - 29.99875rem) / 43.50125);
-    }
-  }
-}
-@media (max-width: 29.99875em) {
-  h3 a {
-    font-size: 1.125rem;
-  }
 }
 
 .block-title {
   position: relative;
   z-index: 5;
-  display: inline-block;
+  display: inline-flex;
 }
 .block-title a {
   display: block;
@@ -2108,6 +2087,59 @@ h3 a {
   column-gap: 1.875rem;
   row-gap: 0.9375rem;
 }
+@media (min-width: 73.5em) {
+  .advantages__grid-container {
+    column-gap: 1.875rem;
+  }
+}
+@media (min-width: 47.993125em) and (max-width: 73.5em) {
+  @supports (column-gap: clamp( 0.75rem , -1.3667730514rem  +  4.4105755801vw , 1.875rem )) {
+    .advantages__grid-container {
+      column-gap: clamp( 0.75rem , -1.3667730514rem  +  4.4105755801vw , 1.875rem );
+    }
+  }
+  @supports not (column-gap: clamp( 0.75rem , -1.3667730514rem  +  4.4105755801vw , 1.875rem )) {
+    .advantages__grid-container {
+      column-gap: calc(0.75rem + 1.125 * (100vw - 47.993125rem) / 25.506875);
+    }
+  }
+}
+@media (max-width: 47.993125em) {
+  .advantages__grid-container {
+    column-gap: 0.75rem;
+  }
+}
+@media (min-width: 73.5em) {
+  .advantages__grid-container {
+    row-gap: 0.9375rem;
+  }
+}
+@media (min-width: 47.993125em) and (max-width: 73.5em) {
+  @supports (row-gap: clamp( 0.625rem , 0.0370074857rem  +  1.2251598834vw , 0.9375rem )) {
+    .advantages__grid-container {
+      row-gap: clamp( 0.625rem , 0.0370074857rem  +  1.2251598834vw , 0.9375rem );
+    }
+  }
+  @supports not (row-gap: clamp( 0.625rem , 0.0370074857rem  +  1.2251598834vw , 0.9375rem )) {
+    .advantages__grid-container {
+      row-gap: calc(0.625rem + 0.3125 * (100vw - 47.993125rem) / 25.506875);
+    }
+  }
+}
+@media (max-width: 47.993125em) {
+  .advantages__grid-container {
+    row-gap: 0.625rem;
+  }
+}
+.advantages__item {
+  display: block;
+}
+@media (max-width: 569px) {
+  .advantages__grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
+  }
+}
+
 .card-advantages__body {
   position: relative;
   display: flex;
@@ -2115,17 +2147,39 @@ h3 a {
   align-items: center;
   min-height: 16.5rem;
   background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+@media (min-width: 73.5em) {
+  .card-advantages__body {
+    min-height: 16.5rem;
+  }
+}
+@media (min-width: 29.99875em) and (max-width: 73.5em) {
+  @supports (min-height: clamp( 11.55rem , 8.1364472285rem  +  11.3789833625vw , 16.5rem )) {
+    .card-advantages__body {
+      min-height: clamp( 11.55rem , 8.1364472285rem  +  11.3789833625vw , 16.5rem );
+    }
+  }
+  @supports not (min-height: clamp( 11.55rem , 8.1364472285rem  +  11.3789833625vw , 16.5rem )) {
+    .card-advantages__body {
+      min-height: calc(11.55rem + 4.95 * (100vw - 29.99875rem) / 43.50125);
+    }
+  }
+}
+@media (max-width: 29.99875em) {
+  .card-advantages__body {
+    min-height: 11.55rem;
+  }
 }
 .card-advantages__title {
   position: relative;
   z-index: 2;
-  margin-bottom: 0.125rem;
 }
-.card-advantages__link {
+.card-advantages__btn {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0px);
-  bottom: -1.25rem;
+  bottom: -1.5rem;
   z-index: 2;
   min-width: 5.1875rem;
   display: flex;
@@ -2137,30 +2191,41 @@ h3 a {
   line-height: 1.2571428571;
   letter-spacing: 1.4px;
   text-transform: capitalize;
-  opacity: 0;
-  visibility: hidden;
+  color: #777777;
 }
-.card-advantages__link::before {
+.card-advantages__btn::before {
   transform: rotate(-90deg);
+}
+.card-advantages__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 .card-advantages__decor {
   pointer-events: none;
 }
 .card-advantages:nth-child(1) .decor-card-advantages .decor-card-advantages__body {
-  width: 100%;
-  height: 100%;
+  width: 14rem;
+  height: 93.5606060606%;
+  right: 0;
+  bottom: 0;
 }
 .card-advantages:nth-child(2) .card-advantages__body .decor-card-advantages__body:nth-child(1) {
-  width: 90.1893939394%;
+  width: 14.88125rem;
   height: 93.5606060606%;
   left: 0;
   bottom: 0;
 }
 .card-advantages:nth-child(2) .card-advantages__body .decor-card-advantages__body:nth-child(2) {
   width: 100%;
-  height: 38.446969697%;
-  left: 0;
-  bottom: 3.5984848485%;
+  height: 10.125rem;
+  right: 0;
+  bottom: -9.4696969697%;
 }
 .card-advantages:nth-child(3) {
   background-color: #885EA5;
@@ -2172,14 +2237,14 @@ h3 a {
   right: 0;
 }
 .card-advantages:nth-child(4) .card-advantages__body .decor-card-advantages__body:nth-child(1) {
-  width: 40.1515151515%;
-  height: 26.8939393939%;
+  width: 6.625rem;
+  height: 4.4375rem;
   left: 30.6818181818%;
   bottom: 0;
 }
 .card-advantages:nth-child(4) .card-advantages__body .decor-card-advantages__body:nth-child(2) {
-  width: 65.5303030303%;
-  height: 39.2803030303%;
+  width: 10.875rem;
+  height: 6.5rem;
   right: 0;
   top: 0;
 }
@@ -2199,20 +2264,22 @@ h3 a {
     pointer-events: none;
     transition: all 0.3s ease 0s;
   }
-  .card-advantages__link {
-    transition: opacity 0.3s ease 0s;
+  .card-advantages__btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease 0s;
   }
-  .card-advantages__link::before {
+  .card-advantages__btn::before {
     transition: transform 0.3s ease 0s;
   }
-  .card-advantages__link:hover::before {
+  .card-advantages__btn:hover::before {
     transform: rotate(-90deg) translate(0px, -20%);
   }
   .card-advantages__body:hover::after {
     opacity: 0.08;
     visibility: visible;
   }
-  .card-advantages__body:hover .card-advantages__link {
+  .card-advantages__body:hover .card-advantages__btn {
     opacity: 1;
     visibility: visible;
   }
@@ -2234,9 +2301,17 @@ h3 a {
   pointer-events: none;
 }
 .decor-card-advantages__content {
+  position: relative;
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+.decor-card-advantages__content img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 .swiper {
   overflow: hidden;
