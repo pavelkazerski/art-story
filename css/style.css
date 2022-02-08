@@ -2207,6 +2207,8 @@ h3 a {
   background-color: transparent;
 }
 .card-advantages__decor {
+  position: relative;
+  z-index: 0;
   pointer-events: none;
 }
 .card-advantages:nth-child(1) .decor-card-advantages .decor-card-advantages__body {
@@ -2225,7 +2227,7 @@ h3 a {
   width: 100%;
   height: 10.125rem;
   right: 0;
-  bottom: -9.4696969697%;
+  bottom: -1.375rem;
 }
 .card-advantages:nth-child(3) {
   background-color: #885EA5;
