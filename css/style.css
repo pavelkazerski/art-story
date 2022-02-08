@@ -243,6 +243,58 @@ body {
   object-fit: contain;
 }
 
+h2 a {
+  line-height: 1.2;
+}
+@media (min-width: 73.5em) {
+  h2 a {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 29.99875em) and (max-width: 73.5em) {
+  @supports (font-size: clamp( 1.6875rem , 1.299596276rem  +  1.2930662912vw , 2.25rem )) {
+    h2 a {
+      font-size: clamp( 1.6875rem , 1.299596276rem  +  1.2930662912vw , 2.25rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.6875rem , 1.299596276rem  +  1.2930662912vw , 2.25rem )) {
+    h2 a {
+      font-size: calc(1.6875rem + 0.5625 * (100vw - 29.99875rem) / 43.50125);
+    }
+  }
+}
+@media (max-width: 29.99875em) {
+  h2 a {
+    font-size: 1.6875rem;
+  }
+}
+
+h3 a {
+  line-height: 1.2;
+}
+@media (min-width: 73.5em) {
+  h3 a {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 29.99875em) and (max-width: 73.5em) {
+  @supports (font-size: clamp( 1.125rem , 0.8663975173rem  +  0.8620441941vw , 1.5rem )) {
+    h3 a {
+      font-size: clamp( 1.125rem , 0.8663975173rem  +  0.8620441941vw , 1.5rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.125rem , 0.8663975173rem  +  0.8620441941vw , 1.5rem )) {
+    h3 a {
+      font-size: calc(1.125rem + 0.375 * (100vw - 29.99875rem) / 43.50125);
+    }
+  }
+}
+@media (max-width: 29.99875em) {
+  h3 a {
+    font-size: 1.125rem;
+  }
+}
+
 .block-title {
   position: relative;
   z-index: 5;
@@ -253,33 +305,10 @@ body {
   position: relative;
   z-index: 3;
   font-family: Bitter, sans-serif;
-  line-height: 1.2;
   letter-spacing: 0.72px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   color: #111111;
-}
-@media (min-width: 73.5em) {
-  .block-title a {
-    font-size: 2.25rem;
-  }
-}
-@media (min-width: 29.99875em) and (max-width: 73.5em) {
-  @supports (font-size: clamp( 1.6875rem , 1.299596276rem  +  1.2930662912vw , 2.25rem )) {
-    .block-title a {
-      font-size: clamp( 1.6875rem , 1.299596276rem  +  1.2930662912vw , 2.25rem );
-    }
-  }
-  @supports not (font-size: clamp( 1.6875rem , 1.299596276rem  +  1.2930662912vw , 2.25rem )) {
-    .block-title a {
-      font-size: calc(1.6875rem + 0.5625 * (100vw - 29.99875rem) / 43.50125);
-    }
-  }
-}
-@media (max-width: 29.99875em) {
-  .block-title a {
-    font-size: 1.6875rem;
-  }
 }
 .block-title::after {
   content: "";
@@ -293,6 +322,7 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translate(0px, -50%);
 }
 @media (any-hover: hover) {
   .block-title::after {
@@ -1631,6 +1661,7 @@ body {
 
 .decor-main-slider__item {
   position: absolute;
+  pointer-events: none;
 }
 .decor-main-slider__item:nth-child(1) {
   bottom: 2rem;
@@ -2065,6 +2096,147 @@ body {
     right: 12%;
     transform: scale(2.5);
   }
+}
+
+.advantages__container {
+  padding-top: 1.3125rem;
+  padding-bottom: 1.3125rem;
+}
+.advantages__grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+  column-gap: 1.875rem;
+  row-gap: 0.9375rem;
+}
+.card-advantages__body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 16.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.card-advantages__title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.125rem;
+}
+.card-advantages__link {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  bottom: -1.25rem;
+  z-index: 2;
+  min-width: 5.1875rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  column-gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2571428571;
+  letter-spacing: 1.4px;
+  text-transform: capitalize;
+  opacity: 0;
+  visibility: hidden;
+}
+.card-advantages__link::before {
+  transform: rotate(-90deg);
+}
+.card-advantages__decor {
+  pointer-events: none;
+}
+.card-advantages:nth-child(1) .decor-card-advantages .decor-card-advantages__body {
+  width: 100%;
+  height: 100%;
+}
+.card-advantages:nth-child(2) .card-advantages__body .decor-card-advantages__body:nth-child(1) {
+  width: 90.1893939394%;
+  height: 93.5606060606%;
+  left: 0;
+  bottom: 0;
+}
+.card-advantages:nth-child(2) .card-advantages__body .decor-card-advantages__body:nth-child(2) {
+  width: 100%;
+  height: 38.446969697%;
+  left: 0;
+  bottom: 3.5984848485%;
+}
+.card-advantages:nth-child(3) {
+  background-color: #885EA5;
+}
+.card-advantages:nth-child(3) .decor-card-advantages .decor-card-advantages__body {
+  width: 91.6666666667%;
+  height: 95.4545454545%;
+  bottom: 0;
+  right: 0;
+}
+.card-advantages:nth-child(4) .card-advantages__body .decor-card-advantages__body:nth-child(1) {
+  width: 40.1515151515%;
+  height: 26.8939393939%;
+  left: 30.6818181818%;
+  bottom: 0;
+}
+.card-advantages:nth-child(4) .card-advantages__body .decor-card-advantages__body:nth-child(2) {
+  width: 65.5303030303%;
+  height: 39.2803030303%;
+  right: 0;
+  top: 0;
+}
+@media (any-hover: hover) {
+  .card-advantages__body::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+  }
+  .card-advantages__link {
+    transition: opacity 0.3s ease 0s;
+  }
+  .card-advantages__link::before {
+    transition: transform 0.3s ease 0s;
+  }
+  .card-advantages__link:hover::before {
+    transform: rotate(-90deg) translate(0px, -20%);
+  }
+  .card-advantages__body:hover::after {
+    opacity: 0.08;
+    visibility: visible;
+  }
+  .card-advantages__body:hover .card-advantages__link {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.decor-card-advantages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.decor-card-advantages__body {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+.decor-card-advantages__content {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 .swiper {
   overflow: hidden;
